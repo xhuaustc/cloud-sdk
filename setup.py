@@ -12,14 +12,12 @@
 from setuptools import find_packages, setup
 
 
-CLIENT_VERSION = "0.0.2"
+CLIENT_VERSION = "0.1"
 PACKAGE_NAME = 'cloud-sdk'
 
 def extract_requirements(filename):
     with open(filename, 'r') as requirements_file:
         return requirements_file.read().splitlines()
-
-
 setup(
     name=PACKAGE_NAME,
     version=CLIENT_VERSION,
@@ -28,8 +26,8 @@ setup(
     author='xhua',
     url="https://github.com/xhuaustc/cloud-sdk.git",
     keywords=['Qingcloud', 'Iaas'],
-    install_requires=extract_requirements('reuirements.txt'),
-    package=find_packages(),
+    install_requires=extract_requirements('requirements.txt'),
+    packages=find_packages(),
     include_package_data=True,
     data_files=[
         ('requirements.txt', ['requirements.txt']),
