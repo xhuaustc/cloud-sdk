@@ -12,7 +12,7 @@
 from setuptools import find_packages, setup
 
 
-CLIENT_VERSION = "0.1.0"
+CLIENT_VERSION = "0.1.1"
 PACKAGE_NAME = 'cloud-sdk'
 
 def extract_requirements(filename):
