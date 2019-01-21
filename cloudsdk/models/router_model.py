@@ -44,5 +44,18 @@ class RouterModel(ApiModel):
         routers_data = ApiModel.get_resources('Routers', 'router_set', zone)
         return routers_data
 
+    @classmethod
+    def get_router_info_by_router_id(cls, router_id, zone=None):
+        """
+        获取指定区域指定router_id的路由器信息
+        :param router_id: vpc的id
+        :param zone: 区域
+        :return: 路由器信息
+        """
+
+        routers_data = ApiModel.get_all(action='DescribeRouters', set='router_set',
+                                        params={'routers.1': router_id, "verbose": 1}, zone=zone)
+        return routers_data
+
 if __name__ == '__main__':
     pass
