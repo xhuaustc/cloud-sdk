@@ -27,7 +27,7 @@ class HttpClient(HttpClientDriver):
             else:
                 raise Exception("请求方式有误")
             return cls.parse(r.content)
-        except Exception, e:
+        except Exception as e:
             print(e)
 
     @classmethod
